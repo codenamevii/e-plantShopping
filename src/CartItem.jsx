@@ -55,8 +55,11 @@ const CartItem = ({ onContinueShopping }) => {
     alert('Functionality to be added for future reference');
   };
 
+  const totalPlantsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <div className="cart-container">
+      <h2 style={{ color: 'black' }}>Total Plants: {totalPlantsCount}</h2>
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount(cart)}</h2>
       <div>
         {cart.map((item) => (
